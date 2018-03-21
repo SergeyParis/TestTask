@@ -6,10 +6,11 @@ using TestTask.SDK.Providers;
 namespace TestTask.Tests.SDK.Providers
 {
     [TestClass]
-    public class RSSAtomProviderTest
+    public class RSSAtomProviderTest//Tests
     {
-        private MessageLogger logger;
-        private RSSAtomProvider provider;
+        //use interface, not classes
+        private MessageLogger logger;//private ILogger _logger
+        private RSSAtomProvider provider; //the same
 
         [TestInitialize]
         public void Initialize()
@@ -18,8 +19,11 @@ namespace TestTask.Tests.SDK.Providers
             provider = (RSSAtomProvider)ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger);
         }
 
+        //Change name to RssAtomProvider_GetFeedCollection_should_set_logger_message
+        //and all other test names as well
+        //Use Arrange, Act, Assert comments in every test
         [TestMethod]
-        public void GetFeedCollectionTest_nullArg_log()
+        public void GetFeedCollectionTest_nullArg_log() 
         {
             provider.GetFeedCollection(null);
 

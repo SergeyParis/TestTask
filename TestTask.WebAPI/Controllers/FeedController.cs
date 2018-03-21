@@ -13,8 +13,9 @@ namespace TestTask.WebAPI.Controllers
         
         public IFeed<IItem> Get(ProviderType providerType, string encodedUrl)
         {
+            //extract regex check into an extension method -> IsUrlValid()
             if (string.IsNullOrEmpty(encodedUrl) || !Regex.IsMatch(encodedUrl, _valideUrlRegex))
-                return null;
+                return null; //it should return BadRequest, or at least throw an exception
 
             return ProvidersFactory.GetProvider(providerType).GetFeedCollection(HttpUtility.HtmlDecode(encodedUrl));
         }
@@ -22,7 +23,7 @@ namespace TestTask.WebAPI.Controllers
         public string Post(string idCollection, IItem feed)
         {
             if (feed == null || string.IsNullOrEmpty(idCollection))
-                return null;
+                return null;//it should return BadRequest, or at least throw an exception
 
             return CacheFactory.GetCacher().AddFeedIntoCollection(idCollection, feed);
         }

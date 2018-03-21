@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using TestTask.SDK.Models;
-
+//usings + namespace
 namespace TestTask.SDK.Providers
 {
     public interface IFeedProvider<out TElement>

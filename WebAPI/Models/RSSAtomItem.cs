@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+//usings
 namespace TestTask.SDK.Models
 {
     public sealed class RSSAtomItem : IItem
     {
+        //make private set
+        //it should not be static
+        //it should be initialized from constructor
+        //or via Dependency Injection container
         internal static ILogger Logger { get; set; }
 
         public string Id { get; }
@@ -23,7 +27,7 @@ namespace TestTask.SDK.Models
                 typeDescription == null)
             {
                 Logger?.Log(nameof(RSSAtomItem), nameof(RSSAtomItem), new ArgumentNullException("Arguments must be not-null"));
-
+                //you should throw exception here
                 return;
             }
 
@@ -40,6 +44,7 @@ namespace TestTask.SDK.Models
 
         public override bool Equals(object obj)
         {
+            //invert to remove nesting
             if (obj is RSSAtomItem)
             {
                 RSSAtomItem y = (RSSAtomItem)obj;
@@ -55,6 +60,8 @@ namespace TestTask.SDK.Models
 
             return false;
         }
+
+        //remove
         public override int GetHashCode() => base.GetHashCode();
     }
 }

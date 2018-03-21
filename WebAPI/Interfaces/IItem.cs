@@ -1,5 +1,5 @@
 ﻿using System;
-
+//namespace
 namespace TestTask.SDK.Models
 {
     public interface IItem

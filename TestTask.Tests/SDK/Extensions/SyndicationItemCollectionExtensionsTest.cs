@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using TestTask.SDK;
 using TestTask.SDK.Models;
-
+//namespace + usings
 namespace TestTask.Tests.SDK
 {
     [TestClass]
@@ -16,7 +16,7 @@ namespace TestTask.Tests.SDK
         public void ToRSSAtomListTest_2EqualCollection()
         {
             DateTimeOffset offset = DateTimeOffset.MinValue;
-            IEnumerable<SyndicationItem> enumerable = GenerateEnumerable();
+            IEnumerable<SyndicationItem> enumerable = GenerateEnumerable(); //extract into a separate method, or place implementation on the top
             
             List<RSSAtomItem> expected = new List<RSSAtomItem>()
                 {

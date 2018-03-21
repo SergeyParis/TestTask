@@ -4,11 +4,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestTask.SDK;
 using TestTask.SDK.Models;
 using TestTask.SDK.Providers;
-
+//usings + namespace
 namespace TestTask.Tests.SDK
 {
     [TestClass]
-    public class RSSAtomFeedTest
+    public class RSSAtomFeedTest //Tests
     {
         [TestMethod]
         public void RSSAtomFeedTest_argumentNull_logDebug()

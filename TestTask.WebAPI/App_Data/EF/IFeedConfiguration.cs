@@ -1,8 +1,9 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using TestTask.SDK.Models;
-
+//namespace
 namespace TestTask.WebAPI
 {
+    //Change name to FeedConfiguration
     internal class IFeedConfiguration : EntityTypeConfiguration<IFeed<IItem>>
     {
         public IFeedConfiguration()

@@ -1,27 +1,28 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ServiceModel.Syndication;
-
+//remove line
 using TestTask.SDK.Models;
 using TestTask.SDK.Providers;
-
+//namespace
 namespace TestTask.Tests.SDK
 {
     [TestClass]
     public class RSSAtomFeedCollectionTest
     {
-        private MessageLogger logger;
+        private MessageLogger logger; //change to interface, change name to _logger
 
         [TestInitialize]
         public void Initialize()
         {
             logger = new MessageLogger();
-            ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger);
+            ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger); //remove
         }
 
         [TestMethod]
         public void RSSAtomFeedCollectionTest_argumentNull_log()
         {
+            //remove System.ServiceModel.Syndication.
             new RSSAtomFeed(null, new System.ServiceModel.Syndication.SyndicationFeed());
 
             StringAssert.Contains(logger.Message, "must be not-null");

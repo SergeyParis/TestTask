@@ -9,7 +9,7 @@ namespace TestTask.SDK.Providers
     public class RSSAtomProvider : IFeedProvider<RSSAtomItem>
     {
         private readonly ICacher _cacher;
-        internal static ILogger _logger;
+        internal static ILogger _logger;//it should not be static, you will have concurrency issues in this case
 
         public long CacheStorageTimeMiliseconds { get; set; } = 1000 * 60 * 60;  // 1 hour
 
@@ -25,7 +25,7 @@ namespace TestTask.SDK.Providers
         }
 
         public bool Cacheable { get; set; }
-
+        //it is not used
         internal RSSAtomProvider(ICacher cacher = null) : this()
         {
             if (cacher != null)
@@ -37,24 +37,27 @@ namespace TestTask.SDK.Providers
 
         public IFeed<RSSAtomItem> GetFeedCollection(string url)
         {
+            //you should also throw exceptions if paramter is incorrect
             if (url == null)
                 Logger?.Log(nameof(RSSAtomProvider), nameof(GetFeedCollection), new ArgumentException($"{url} must be not-null"));
             else if (string.IsNullOrEmpty(url))
                 Logger?.Log(nameof(RSSAtomProvider), nameof(GetFeedCollection), new ArgumentException($"{url} must be not empty string"));
-            else
+            else //should you remove this else and return Load(url) in every case?
                 return Load(url);
 
             return new RSSAtomFeed("empty", new SyndicationFeed());
         }
 
         private RSSAtomFeed Load(string url)
-        {
+        {//check url for null/empty string/ whitespace
             string id = GetUniqId(url);
 
-            if (!Cacheable)
+            if (!Cacheable) // what will happen if it is Cacheble but there is not data in the cache yet?
                 return LoadFromWeb(url).ToRSSAtomFeedCollection(id);
 
+            //what's the point of if? In both cases you load data from cache
             if (_cacher.GetTimeExistCacheMiliseconds(id) < CacheStorageTimeMiliseconds)
+                //extract the whole if to a separate method GetFromCache
             {
                 RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
 
@@ -64,10 +67,12 @@ namespace TestTask.SDK.Providers
                 return c;
             }
             else
+                //extract into a separate method, is it 'UpdateCache'?
             {
                 RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
 
                 if (c == null)
+                    //you should throw exception herer
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} cannot be null"));
                 else
                     _cacher.CachingCollection(c);
@@ -76,6 +81,7 @@ namespace TestTask.SDK.Providers
             }
         }
 
+        //extract it into FeedReader class with it own interface IFeedReader and call that, instead of this method
         private SyndicationFeed LoadFromWeb(string url)
         {
             SyndicationFeed channel;
@@ -95,6 +101,8 @@ namespace TestTask.SDK.Providers
 
             return channel;
         }
+
+        //move these 2 methods to StringExtensions class
         protected virtual string GetUniqId(string url) => GenerateUniqId(url);
 
         public static string GenerateUniqId(string url) => url.Replace('/', '_').

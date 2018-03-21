@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using TestTask.SDK.Models;
 
+//it should be placed here, as any other EF framework related class. Extract it into a separate project TestTask.Data
 namespace TestTask.WebAPI
 {
     internal class FeedContext : DbContext

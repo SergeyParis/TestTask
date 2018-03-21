@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using TestTask.SDK;
 using TestTask.SDK.Providers;
 using TestTask.SDK.Models;
-
+//usings
 namespace TestTask.ConsoleTest
 {
     class Program
     {
+        //move to app config file
         private const string URL = @"https://blogs.msdn.microsoft.com/dotnet/feed/";
 
         static void Main(string[] args)
@@ -19,7 +20,7 @@ namespace TestTask.ConsoleTest
             
             Console.ReadKey();
         }
-        
+        //move to a separate file or delete, it is not used
         internal sealed class MessageLogger : ILogger
         {
             public string Message { get; set; }

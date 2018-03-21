@@ -153,7 +153,9 @@
   <ItemGroup>
     <Compile Include="App_Data\CacheFactory.cs" />
     <Compile Include="App_Data\CacheDB.cs" />
-    <Compile Include="App_Data\Entity Framework\FeedContext.cs" />
+    <Compile Include="App_Data\EF\FeedContext.cs" />
+    <Compile Include="App_Data\EF\IFeedConfiguration.cs" />
+    <Compile Include="App_Data\EF\IItemConfiguration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

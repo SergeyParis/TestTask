@@ -1,0 +1,10 @@
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.exe.config
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.exe
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.pdb
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.csproj.CoreCompileInputs.cache
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.exe
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.pdb
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\WebAPI.dll
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\WebAPI.pdb
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\WebAPI.dll.config
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.csprojResolveAssemblyReference.cache

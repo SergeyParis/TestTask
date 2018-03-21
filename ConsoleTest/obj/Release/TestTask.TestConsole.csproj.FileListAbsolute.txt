@@ -1,0 +1,10 @@
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.exe.config
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.exe
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\ConsoleTest.pdb
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\TestTask.SDK.dll
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\TestTask.SDK.pdb
+D:\dev\projects\TestTask\ConsoleTest\bin\Release\TestTask.SDK.dll.config
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\TestTask.TestConsole.csprojResolveAssemblyReference.cache
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\TestTask.TestConsole.csproj.CoreCompileInputs.cache
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.exe
+D:\dev\projects\TestTask\ConsoleTest\obj\Release\ConsoleTest.pdb

@@ -8,15 +8,15 @@ namespace TestTask.SDK
 {
     public static class SyndicationItemCollectionExtensions
     {
-        public static List<RSSAtomFeed> ToRSSAtomList(this IEnumerable<SyndicationItem> enumerable)
+        public static List<RSSAtomItem> ToRSSAtomList(this IEnumerable<SyndicationItem> enumerable)
         {
-            List<RSSAtomFeed> feeds = new List<RSSAtomFeed>();
+            List<RSSAtomItem> feeds = new List<RSSAtomItem>();
 
             foreach (SyndicationItem one in enumerable)
-                feeds.Add(new RSSAtomFeed(one.Id, one.Summary.Text, one.Summary.Type, one.Links.First().Uri.OriginalString.ToString(), one.Title.Text, one.PublishDate.DateTime));
+                feeds.Add(new RSSAtomItem(one.Id, one.Summary.Text, one.Summary.Type, one.Links.First().Uri.OriginalString.ToString(), one.Title.Text, one.PublishDate.DateTime));
 
             return feeds;
         }
-        public static RSSAtomFeedCollection ToRSSAtomFeedCollection(this SyndicationFeed feed, string id) => new RSSAtomFeedCollection(id, feed);
+        public static RSSAtomFeed ToRSSAtomFeedCollection(this SyndicationFeed feed, string id) => new RSSAtomFeed(id, feed);
     }
 }

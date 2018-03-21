@@ -28,10 +28,10 @@ namespace TestTask.ConsoleTest
 
         static void PrintAllFeeds()
         {
-            IFeedCollectionProvider<IFeed> provider = ProvidersFactory.GetProvider(ProviderType.RSS);
-            IFeedCollection<IFeed> collection = provider.GetFeedCollection(URL);
+            IFeedProvider<IItem> provider = ProvidersFactory.GetProvider(ProviderType.RSS);
+            IFeed<IItem> collection = provider.GetFeedCollection(URL);
 
-            foreach (IFeed one in collection)
+            foreach (IItem one in collection)
                 Console.WriteLine($"Id: {one.Id}\n" +
                                   $"Link: {one.Link}\n" +
                                   $"PublishDate: {one.PublishDate}\n" +
@@ -42,9 +42,9 @@ namespace TestTask.ConsoleTest
         static void WriteFeed()
         {
             RSSAtomProvider provider = new RSSAtomProvider();
-            IFeedCollection<RSSAtomFeed> collection = provider.GetFeedCollection(URL);
+            IFeed<RSSAtomItem> collection = provider.GetFeedCollection(URL);
 
-            Console.WriteLine(collection.AddFeed(new RSSAtomFeed("new feed", "description", "text", "someurl", "title", new DateTime())));
+            Console.WriteLine(collection.AddFeed(new RSSAtomItem("new feed", "description", "text", "someurl", "title", new DateTime())));
         }
     }
 

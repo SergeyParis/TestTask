@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TestTask.SDK.Models
 {
-    public interface IFeed
+    public interface IFeed<out TElement> : IEnumerable<TElement>
+        where TElement : IItem
     {
         string Id { get; }
-        string Description { get; }
-        string TypeDescription { get; }
-        string Link { get; }
+        string Name { get; }
         string Title { get; }
-        DateTime PublishDate { get; }
+        string Language { get; }
+        DateTime LastUpdatedTime { get; }
+
+        string AddFeed(IItem element);
+        IEnumerable<TElement> GetFeeds();
+        
+        TElement GetFeed(string id);
     }
 }

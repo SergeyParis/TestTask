@@ -6,7 +6,7 @@ using TestTask.SDK.Models;
 
 namespace TestTask.SDK.Providers
 {
-    public class RSSAtomProvider : IFeedCollectionProvider<RSSAtomFeed>
+    public class RSSAtomProvider : IFeedProvider<RSSAtomItem>
     {
         private readonly ICacher _cacher;
         internal static ILogger _logger;
@@ -19,8 +19,8 @@ namespace TestTask.SDK.Providers
             set
             {
                 _logger = value;
-                RSSAtomFeedCollection.Logger = value;
                 RSSAtomFeed.Logger = value;
+                RSSAtomItem.Logger = value;
             }
         }
 
@@ -35,7 +35,7 @@ namespace TestTask.SDK.Providers
         }
         public RSSAtomProvider() { }
 
-        public IFeedCollection<RSSAtomFeed> GetFeedCollection(string url)
+        public IFeed<RSSAtomItem> GetFeedCollection(string url)
         {
             if (url == null)
                 Logger?.Log(nameof(RSSAtomProvider), nameof(GetFeedCollection), new ArgumentException($"{url} must be not-null"));
@@ -44,10 +44,10 @@ namespace TestTask.SDK.Providers
             else
                 return Load(url);
 
-            return new RSSAtomFeedCollection("empty", new SyndicationFeed());
+            return new RSSAtomFeed("empty", new SyndicationFeed());
         }
 
-        private RSSAtomFeedCollection Load(string url)
+        private RSSAtomFeed Load(string url)
         {
             string id = GetUniqId(url);
 
@@ -56,7 +56,7 @@ namespace TestTask.SDK.Providers
 
             if (_cacher.GetTimeExistCacheMiliseconds(id) < CacheStorageTimeMiliseconds)
             {
-                RSSAtomFeedCollection c = _cacher.GetCollection(id) as RSSAtomFeedCollection;
+                RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
 
                 if (c == null)
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} must be not-null"));
@@ -65,7 +65,7 @@ namespace TestTask.SDK.Providers
             }
             else
             {
-                RSSAtomFeedCollection c = _cacher.GetCollection(id) as RSSAtomFeedCollection;
+                RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
 
                 if (c == null)
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} cannot be null"));
@@ -95,7 +95,9 @@ namespace TestTask.SDK.Providers
 
             return channel;
         }
-        protected virtual string GetUniqId(string url) => url.Replace('/', '_').
+        protected virtual string GetUniqId(string url) => GenerateUniqId(url);
+
+        public static string GenerateUniqId(string url) => url.Replace('/', '_').
                                                 Replace("http:__", "").Replace("https:__", "").
                                                 Replace(".xml", "").Replace("www.", "");
     }

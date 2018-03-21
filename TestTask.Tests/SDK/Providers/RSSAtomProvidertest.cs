@@ -37,7 +37,7 @@ namespace TestTask.Tests.SDK.Providers
         [TestMethod]
         public void GetFeedCollectionTest_validArg_log()
         {
-            IFeedCollection<RSSAtomFeed> c = provider.GetFeedCollection(@"https://ru.stackoverflow.com/feeds");
+            IFeed<RSSAtomItem> c = provider.GetFeedCollection(@"https://ru.stackoverflow.com/feeds");
 
             Assert.IsNotNull(c.Title);
         }

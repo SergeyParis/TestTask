@@ -90,14 +90,14 @@
     <Compile Include="Enums\ProviderType.cs" />
     <Compile Include="Extensions\SyndicationItemExtensions.cs" />
     <Compile Include="Interfaces\ICacher.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Interfaces\IFeedProvider.cs" />
     <Compile Include="Interfaces\IFeed.cs" />
-    <Compile Include="Interfaces\IFeedCollectionProvider.cs" />
-    <Compile Include="Interfaces\IFeedCollection.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Providers\ProvidersFactory.cs" />
     <Compile Include="Providers\RSSAtomProvider.cs" />
-    <Compile Include="Models\RSSAtomFeedCollection.cs" />
     <Compile Include="Models\RSSAtomFeed.cs" />
+    <Compile Include="Models\RSSAtomItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

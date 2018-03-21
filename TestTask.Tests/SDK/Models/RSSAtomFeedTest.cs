@@ -16,7 +16,7 @@ namespace TestTask.Tests.SDK
             MessageLogger logger = new MessageLogger();
             ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger);
 
-            new RSSAtomFeed(null, null, "text", @"https://stackoverflow.com", "title", DateTime.Now);
+            new RSSAtomItem(null, null, "text", @"https://stackoverflow.com", "title", DateTime.Now);
 
             StringAssert.Contains(logger.Message, "must be not-null");
         }

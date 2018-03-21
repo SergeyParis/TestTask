@@ -9,7 +9,7 @@ namespace TestTask.SDK.Providers
         public static ICacher Cacher = null;
         public static ILogger Logger = null;
 
-        public static IFeedCollectionProvider<IFeed> GetProvider(ProviderType type, ICacher cacher = null, ILogger logger = null)
+        public static IFeedProvider<IItem> GetProvider(ProviderType type, ICacher cacher = null, ILogger logger = null)
         {
             ICacher __cacher = cacher ?? Cacher;
             ILogger __logger = logger ?? Logger;

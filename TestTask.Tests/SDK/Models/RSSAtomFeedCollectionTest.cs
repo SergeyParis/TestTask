@@ -22,7 +22,7 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void RSSAtomFeedCollectionTest_argumentNull_log()
         {
-            new RSSAtomFeedCollection(null, new System.ServiceModel.Syndication.SyndicationFeed());
+            new RSSAtomFeed(null, new System.ServiceModel.Syndication.SyndicationFeed());
 
             StringAssert.Contains(logger.Message, "must be not-null");
         }
@@ -30,7 +30,7 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void AddFeedTest_argumentNull_log()
         {
-            RSSAtomFeedCollection c = new RSSAtomFeedCollection("uniqId", new System.ServiceModel.Syndication.SyndicationFeed());
+            RSSAtomFeed c = new RSSAtomFeed("uniqId", new System.ServiceModel.Syndication.SyndicationFeed());
 
             c.AddFeed(null);
 
@@ -40,10 +40,10 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void AddFeedTest_validArg_2EqualObj()
         {
-            RSSAtomFeedCollection c = new RSSAtomFeedCollection("uniqIdCollection", new SyndicationFeed());
-            RSSAtomFeed expectedValue = new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue);
+            RSSAtomFeed c = new RSSAtomFeed("uniqIdCollection", new SyndicationFeed());
+            RSSAtomItem expectedValue = new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue);
 
-            c.AddFeed(new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
+            c.AddFeed(new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
 
             Assert.AreEqual(expectedValue, c[c.Count - 1]);
         }
@@ -51,10 +51,10 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void GetFeed_nullStr_log()
         {
-            RSSAtomFeedCollection c = new RSSAtomFeedCollection("uniqIdCollection", new SyndicationFeed());
-            c.AddFeed(new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
+            RSSAtomFeed c = new RSSAtomFeed("uniqIdCollection", new SyndicationFeed());
+            c.AddFeed(new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
             
-            RSSAtomFeed result = c.GetFeed(null);
+            RSSAtomItem result = c.GetFeed(null);
 
             StringAssert.Contains(logger.Message, $"must be not-null");
         }
@@ -62,10 +62,10 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void GetFeed_emptyStr_log()
         {
-            RSSAtomFeedCollection c = new RSSAtomFeedCollection("uniqIdCollection", new SyndicationFeed());
-            c.AddFeed(new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
+            RSSAtomFeed c = new RSSAtomFeed("uniqIdCollection", new SyndicationFeed());
+            c.AddFeed(new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
             
-            RSSAtomFeed result = c.GetFeed("");
+            RSSAtomItem result = c.GetFeed("");
 
             StringAssert.Contains(logger.Message, $"must be not empty string");
         }
@@ -73,12 +73,12 @@ namespace TestTask.Tests.SDK
         [TestMethod]
         public void GetFeed_valigStr_2EqualObj()
         {
-            RSSAtomFeedCollection c = new RSSAtomFeedCollection("uniqIdCollection", new SyndicationFeed());
-            c.AddFeed(new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
+            RSSAtomFeed c = new RSSAtomFeed("uniqIdCollection", new SyndicationFeed());
+            c.AddFeed(new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue));
 
-            RSSAtomFeed expectedValue = new RSSAtomFeed("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue);
+            RSSAtomItem expectedValue = new RSSAtomItem("uniqIdFeed", "description", "text", "http:\\someurl.com", "title", DateTime.MinValue);
 
-            RSSAtomFeed result = c.GetFeed("uniqIdFeed");
+            RSSAtomItem result = c.GetFeed("uniqIdFeed");
 
             Assert.AreEqual(expectedValue, result);
         }

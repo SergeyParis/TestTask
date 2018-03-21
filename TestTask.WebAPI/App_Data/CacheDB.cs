@@ -7,10 +7,21 @@ namespace TestTask.WebAPI
 {
     internal sealed class CacheDB : ICacher
     {
-        public string AddFeedIntoCollection(string collectionId, IFeed feed) => throw new NotImplementedException();
-        public void CachingCollection(IFeedCollection<IFeed> collection) => throw new NotImplementedException();
-        public IFeedCollection<IFeed> GetCollection(string Id) => throw new NotImplementedException();
+        private readonly FeedContext _db;
+
+        public CacheDB()
+        {
+            _db = new FeedContext();
+        }
+
+
+        public IFeed<IItem> GetCollection(string Id)
+        {
+            
+        }
         public long GetTimeExistCacheMiliseconds(string Id) => throw new NotImplementedException();
-        public bool TryLoadFromCache(string Id, out IFeedCollection<IFeed> collection) => throw new NotImplementedException();
+        public string AddFeedIntoCollection(string collectionId, IItem feed) => throw new NotImplementedException();
+        public void CachingCollection(IFeed<IItem> collection) => throw new NotImplementedException();
+        public bool TryLoadFromCache(string Id, out IFeed<IItem> collection) => throw new NotImplementedException();
     }
 }

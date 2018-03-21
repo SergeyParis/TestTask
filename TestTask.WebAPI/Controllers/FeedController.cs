@@ -11,7 +11,7 @@ namespace TestTask.WebAPI.Controllers
     {
         private const string _valideUrlRegex = @"(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
         
-        public IFeedCollection<IFeed> Get(ProviderType providerType, string encodedUrl)
+        public IFeed<IItem> Get(ProviderType providerType, string encodedUrl)
         {
             if (string.IsNullOrEmpty(encodedUrl) || !Regex.IsMatch(encodedUrl, _valideUrlRegex))
                 return null;
@@ -19,13 +19,12 @@ namespace TestTask.WebAPI.Controllers
             return ProvidersFactory.GetProvider(providerType).GetFeedCollection(HttpUtility.HtmlDecode(encodedUrl));
         }
 
-        public string Post(string idCollection, IFeed feed)
+        public string Post(string idCollection, IItem feed)
         {
             if (feed == null || string.IsNullOrEmpty(idCollection))
                 return null;
 
             return CacheFactory.GetCacher().AddFeedIntoCollection(idCollection, feed);
         }
-
     }
 }

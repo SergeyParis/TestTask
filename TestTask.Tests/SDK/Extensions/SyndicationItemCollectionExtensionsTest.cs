@@ -18,13 +18,13 @@ namespace TestTask.Tests.SDK
             DateTimeOffset offset = DateTimeOffset.MinValue;
             IEnumerable<SyndicationItem> enumerable = GenerateEnumerable();
             
-            List<RSSAtomFeed> expected = new List<RSSAtomFeed>()
+            List<RSSAtomItem> expected = new List<RSSAtomItem>()
                 {
-                    new RSSAtomFeed($"id0", "0", "text", $"https://stackoverflow0.com", $"title0", offset.DateTime ),
-                    new RSSAtomFeed($"id1", "1", "text", $"https://stackoverflow1.com", $"title1", offset.DateTime )
+                    new RSSAtomItem($"id0", "0", "text", $"https://stackoverflow0.com", $"title0", offset.DateTime ),
+                    new RSSAtomItem($"id1", "1", "text", $"https://stackoverflow1.com", $"title1", offset.DateTime )
                 };
             
-            foreach (RSSAtomFeed one in enumerable.ToRSSAtomList())
+            foreach (RSSAtomItem one in enumerable.ToRSSAtomList())
                 if (!expected.Contains(one))
                     Assert.Fail();
             

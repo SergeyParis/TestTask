@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TestTask.SDK.Models;
 
 namespace TestTask.WebAPI
 {
@@ -21,6 +22,8 @@ namespace TestTask.WebAPI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FeedContext>());
+
+            new FeedContext().Items.Add(new RSSAtomItem("asd", "asd", "asd", "http:\\web.com", "asd", DateTime.Now));
         }
     }
 }

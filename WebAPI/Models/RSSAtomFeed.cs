@@ -8,27 +8,21 @@ namespace TestTask.SDK.Models
 {
     public sealed class RSSAtomFeed : SyndicationFeed, IFeed<RSSAtomItem>
     {
-        internal static ILogger Logger { get; set; }
         private List<RSSAtomItem> _feeds;
-
         private List<RSSAtomItem> Feeds
         {
             set { _feeds = value; }
-            get
-            {
-                if (_feeds == null)
-                    _feeds = new List<RSSAtomItem>();
-
-                return _feeds;
-            }
+            get => _feeds ?? new List<RSSAtomItem>();
         }
+
+        internal static ILogger Logger { get; set; }
 
         new public string Id { get; }
         public string Name { get; }
         public int Count => Feeds.Count;
-
         new public string Title => base.Title.Text;
         new public DateTime LastUpdatedTime => base.LastUpdatedTime.DateTime;
+
 
         public RSSAtomFeed(string id, SyndicationFeed syndicationFeed)
             : base(syndicationFeed, false)
@@ -57,29 +51,15 @@ namespace TestTask.SDK.Models
         public RSSAtomItem GetFeed(string id)
         {
             if (id == null)
-                Logger?.Log(nameof(RSSAtomFeed), nameof(GetFeed), new ArgumentException($"{id} must be not-null"));              
+                Logger?.Log(nameof(RSSAtomFeed), nameof(GetFeed), new ArgumentException($"{id} must be not-null"));
             else if (string.IsNullOrEmpty(id))
                 Logger?.Log(nameof(RSSAtomFeed), nameof(GetFeed), new ArgumentException($"{id} must be not empty string"));
-            else 
+            else
                 return Feeds.First(feed => feed.Id == id);
 
             return Feeds.First();
         }
         public IEnumerable<RSSAtomItem> GetFeeds() => Feeds;
-        private void InitFeeds(IEnumerable<SyndicationItem> enumerable)
-        {
-            if (enumerable == null)
-            {
-                Logger?.Log(nameof(RSSAtomFeed), nameof(AddFeed), new ArgumentNullException($"{nameof(enumerable)} must be not-null"));
-
-                return;
-            }
-
-            this.Feeds = enumerable.ToRSSAtomList();
-        }
-
-        IEnumerator<RSSAtomItem> IEnumerable<RSSAtomItem>.GetEnumerator() => ((IEnumerable<RSSAtomItem>)Feeds).GetEnumerator();
-        IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<RSSAtomItem>)this).GetEnumerator();
 
         public override bool Equals(object obj)
         {
@@ -118,6 +98,21 @@ namespace TestTask.SDK.Models
 
                 Feeds[index] = value;
             }
+        }
+
+        IEnumerator<RSSAtomItem> IEnumerable<RSSAtomItem>.GetEnumerator() => ((IEnumerable<RSSAtomItem>)Feeds).GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<RSSAtomItem>)this).GetEnumerator();
+
+        private void InitFeeds(IEnumerable<SyndicationItem> enumerable)
+        {
+            if (enumerable == null)
+            {
+                Logger?.Log(nameof(RSSAtomFeed), nameof(AddFeed), new ArgumentNullException($"{nameof(enumerable)} must be not-null"));
+
+                return;
+            }
+
+            this.Feeds = enumerable.ToRssAtomList();
         }
     }
 }

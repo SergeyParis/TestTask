@@ -1,5 +1,4 @@
 ﻿using System;
-
 using TestTask.SDK.Models;
 
 namespace TestTask.SDK.Providers
@@ -23,6 +22,17 @@ namespace TestTask.SDK.Providers
                         return new RSSAtomProvider();
                     }
 
+                default: throw new Exception("Undefined type provider");
+            }
+        }
+
+        public static void SetLogger(ProviderType type, ILogger logger)
+        {
+            switch (type)
+            {
+                case (ProviderType.RSS):
+                case (ProviderType.Atom): RSSAtomProvider.Logger = logger; break;
+                    
                 default: throw new Exception("Undefined type provider");
             }
         }

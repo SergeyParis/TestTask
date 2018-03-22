@@ -1,8 +1,4 @@
 ﻿using System;
-using System.ServiceModel.Syndication;
-using System.Collections.Generic;
-
-using TestTask.SDK;
 using TestTask.SDK.Providers;
 using TestTask.SDK.Models;
 
@@ -20,12 +16,6 @@ namespace TestTask.ConsoleTest
             Console.ReadKey();
         }
         
-        internal sealed class MessageLogger : ILogger
-        {
-            public string Message { get; set; }
-            public void Log(string className, string methodName, Exception exception) => Message = exception.Message;
-        }
-
         static void PrintAllFeeds()
         {
             IFeedProvider<IItem> provider = ProvidersFactory.GetProvider(ProviderType.RSS);

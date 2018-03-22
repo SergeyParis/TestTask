@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Xml;
 using System.ServiceModel.Syndication;
-
 using TestTask.SDK.Models;
 
 namespace TestTask.SDK.Providers
@@ -56,7 +55,7 @@ namespace TestTask.SDK.Providers
 
             if (_cacher.GetTimeExistCacheMiliseconds(id) < CacheStorageTimeMiliseconds)
             {
-                RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
+                RSSAtomFeed c = _cacher.GetFeed(id) as RSSAtomFeed;
 
                 if (c == null)
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} must be not-null"));
@@ -65,7 +64,7 @@ namespace TestTask.SDK.Providers
             }
             else
             {
-                RSSAtomFeed c = _cacher.GetCollection(id) as RSSAtomFeed;
+                RSSAtomFeed c = _cacher.GetFeed(id) as RSSAtomFeed;
 
                 if (c == null)
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} cannot be null"));

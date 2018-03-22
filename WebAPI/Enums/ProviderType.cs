@@ -1,8 +1,8 @@
-﻿namespace TestTask.SDK.Providers
+﻿namespace TestTask.SDK
 {
     public enum ProviderType
     {
-        RSS,
+        Rss,
         Atom
     }
 }

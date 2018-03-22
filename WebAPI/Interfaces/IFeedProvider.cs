@@ -1,6 +1,4 @@
-﻿using TestTask.SDK.Models;
-
-namespace TestTask.SDK.Providers
+﻿namespace TestTask.SDK
 {
     public interface IFeedProvider<out TElement>
         where TElement : IItem

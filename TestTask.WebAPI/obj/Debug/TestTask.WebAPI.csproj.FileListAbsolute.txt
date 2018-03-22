@@ -63,3 +63,6 @@ D:\dev\projects\TestTask\TestTask.WebAPI\bin\EntityFramework.SqlServer.xml
 D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.SDK.dll
 D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.SDK.pdb
 D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.SDK.dll.config
+D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.Data.dll
+D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.Data.pdb
+D:\dev\projects\TestTask\TestTask.WebAPI\bin\TestTask.Data.dll.config

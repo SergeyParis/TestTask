@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Xml;
 using System.ServiceModel.Syndication;
-using TestTask.SDK.Models;
 
-namespace TestTask.SDK.Providers
+namespace TestTask.SDK
 {
     public class RSSAtomProvider : IFeedProvider<RSSAtomItem>
     {
@@ -69,7 +68,7 @@ namespace TestTask.SDK.Providers
                 if (c == null)
                     Logger?.Log(nameof(RSSAtomProvider), nameof(Load), new NullReferenceException($"{nameof(c)} cannot be null"));
                 else
-                    _cacher.CachingCollection(c);
+                    _cacher.CachingFeed(c);
 
                 return c;
             }

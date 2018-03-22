@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestTask.SDK.Models
+namespace TestTask.SDK
 {
     public interface IItem
     {

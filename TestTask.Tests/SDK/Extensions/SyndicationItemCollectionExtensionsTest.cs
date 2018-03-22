@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestTask.SDK;
-using TestTask.SDK.Models;
 
 namespace TestTask.Tests.SDK
 {

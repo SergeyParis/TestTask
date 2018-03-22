@@ -1,7 +1,6 @@
 ﻿using System;
-using TestTask.SDK.Models;
 
-namespace TestTask.SDK.Providers
+namespace TestTask.SDK
 {
     public static class ProvidersFactory
     {
@@ -15,7 +14,7 @@ namespace TestTask.SDK.Providers
 
             switch (type)
             {
-                case (ProviderType.RSS):
+                case (ProviderType.Rss):
                 case (ProviderType.Atom):
                     {
                         RSSAtomProvider.Logger = __logger;
@@ -30,7 +29,7 @@ namespace TestTask.SDK.Providers
         {
             switch (type)
             {
-                case (ProviderType.RSS):
+                case (ProviderType.Rss):
                 case (ProviderType.Atom): RSSAtomProvider.Logger = logger; break;
                     
                 default: throw new Exception("Undefined type provider");

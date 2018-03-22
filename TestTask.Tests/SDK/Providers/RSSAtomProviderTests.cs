@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestTask.SDK.Models;
-using TestTask.SDK.Providers;
+using TestTask.SDK;
 
-namespace TestTask.Tests.SDK.Providers
+namespace TestTask.Tests.SDK
 {
     [TestClass]
     public class RSSAtomProviderTests
@@ -14,7 +13,7 @@ namespace TestTask.Tests.SDK.Providers
         public void Initialize()
         {
             logger = new SimpleLogger();
-            provider = (RSSAtomProvider)ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger);
+            provider = (RSSAtomProvider)ProvidersFactory.GetProvider(ProviderType.Rss, logger: logger);
         }
 
         [TestMethod]

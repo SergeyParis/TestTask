@@ -1,8 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ServiceModel.Syndication;
-using TestTask.SDK.Models;
-using TestTask.SDK.Providers;
+using TestTask.SDK;
 
 namespace TestTask.Tests.SDK
 {
@@ -15,7 +14,7 @@ namespace TestTask.Tests.SDK
         public void Initialize()
         {
             logger = new SimpleLogger();
-            ProvidersFactory.SetLogger(ProviderType.RSS, logger);
+            ProvidersFactory.SetLogger(ProviderType.Rss, logger);
         }
 
         [TestMethod]

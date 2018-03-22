@@ -1,6 +1,5 @@
 ﻿using System;
-using TestTask.SDK.Providers;
-using TestTask.SDK.Models;
+using TestTask.SDK;
 
 namespace TestTask.ConsoleTest
 {
@@ -18,7 +17,7 @@ namespace TestTask.ConsoleTest
         
         static void PrintAllFeeds()
         {
-            IFeedProvider<IItem> provider = ProvidersFactory.GetProvider(ProviderType.RSS);
+            IFeedProvider<IItem> provider = ProvidersFactory.GetProvider(ProviderType.Rss);
             IFeed<IItem> collection = provider.GetFeedCollection(URL);
 
             foreach (IItem one in collection)

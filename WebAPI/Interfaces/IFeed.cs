@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestTask.SDK.Models
+namespace TestTask.SDK
 {
     public interface IFeed<out TElement> : IEnumerable<TElement>
         where TElement : IItem

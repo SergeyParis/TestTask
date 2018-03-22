@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel.Syndication;
 using System.Linq;
-using TestTask.SDK.Models;
 
 namespace TestTask.SDK
 {

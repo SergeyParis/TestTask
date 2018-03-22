@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
+using TestTask.Data;
 using TestTask.SDK;
-using TestTask.SDK.Models;
 
 namespace TestTask.WebAPI
 {
@@ -44,7 +44,7 @@ namespace TestTask.WebAPI
 
             return feed.Id;
         }
-        public void CachingCollection(IFeed<IItem> feed)
+        public void CachingFeed(IFeed<IItem> feed)
         {
             if (feed != null)
                 _db.Users.Find(User.Id).Feeds.Add(feed);

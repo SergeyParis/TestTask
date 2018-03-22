@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.WebAPI", "TestTask
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Tests", "TestTask.Tests\TestTask.Tests.csproj", "{0E9C293E-764A-46E2-A9AC-3D72E34F9377}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTask.Data", "TestTask.Data\TestTask.Data.csproj", "{BDC3539E-56F2-4E8A-B328-C113C586022A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0E9C293E-764A-46E2-A9AC-3D72E34F9377}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E9C293E-764A-46E2-A9AC-3D72E34F9377}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E9C293E-764A-46E2-A9AC-3D72E34F9377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC3539E-56F2-4E8A-B328-C113C586022A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC3539E-56F2-4E8A-B328-C113C586022A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC3539E-56F2-4E8A-B328-C113C586022A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC3539E-56F2-4E8A-B328-C113C586022A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -153,12 +153,6 @@
   <ItemGroup>
     <Compile Include="App_Code\CacheFactory.cs" />
     <Compile Include="App_Code\CacheDB.cs" />
-    <Compile Include="App_Code\EF\FeedContext.cs" />
-    <Compile Include="App_Code\EF\FeedsConfiguration.cs" />
-    <Compile Include="App_Code\EF\ItemsConfiguration.cs" />
-    <Compile Include="App_Code\EF\Model\IUser.cs" />
-    <Compile Include="App_Code\EF\Model\User.cs" />
-    <Compile Include="App_Code\EF\UsersConfiguration.cs" />
     <Content Include="App_Code\Extensions\StringExtensions.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -204,6 +198,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestTask.Data\TestTask.Data.csproj">
+      <Project>{bdc3539e-56f2-4e8a-b328-c113c586022a}</Project>
+      <Name>TestTask.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebAPI\TestTask.SDK.csproj">
       <Project>{dd25bac4-1952-4998-aefa-aa3e8a040097}</Project>
       <Name>TestTask.SDK</Name>

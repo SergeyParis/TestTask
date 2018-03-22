@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestTask.SDK.Models;
-using TestTask.SDK.Providers;
+using TestTask.SDK;
 
 namespace TestTask.Tests.SDK
 {
@@ -12,7 +11,7 @@ namespace TestTask.Tests.SDK
         public void RSSAtomFeedTest_argumentNull_logDebug()
         {
             SimpleLogger logger = new SimpleLogger();
-            ProvidersFactory.GetProvider(ProviderType.RSS, logger: logger);
+            ProvidersFactory.GetProvider(ProviderType.Rss, logger: logger);
 
             new RSSAtomItem(null, null, "text", @"https://stackoverflow.com", "title", DateTime.Now);
 

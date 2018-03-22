@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using TestTask.SDK.Models;
+using TestTask.SDK;
 
 namespace TestTask.WebAPI
 {
@@ -20,10 +15,6 @@ namespace TestTask.WebAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FeedContext>());
-
-            new FeedContext().Items.Add(new RSSAtomItem("asd", "asd", "asd", "http:\\web.com", "asd", DateTime.Now));
         }
     }
 }

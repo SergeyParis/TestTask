@@ -57,3 +57,6 @@ D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\EntityFramework.xml
 D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.SDK.dll
 D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.SDK.pdb
 D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.SDK.dll.config
+D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.Data.dll
+D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.Data.pdb
+D:\dev\projects\TestTask\TestTask.Tests\bin\Debug\TestTask.Data.dll.config

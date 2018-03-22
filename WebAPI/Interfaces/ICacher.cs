@@ -1,10 +1,8 @@
-﻿using TestTask.SDK.Models;
-
-namespace TestTask.SDK
+﻿namespace TestTask.SDK
 {
     public interface ICacher
     {
-        void CachingCollection(IFeed<IItem> feed);
+        void CachingFeed(IFeed<IItem> feed);
         IFeed<IItem> GetFeed(string id);
 
         string AddItemIntoFeed(string collectionId, IItem feed);

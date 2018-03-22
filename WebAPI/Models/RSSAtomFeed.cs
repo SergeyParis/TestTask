@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel.Syndication;
 
-namespace TestTask.SDK.Models
+namespace TestTask.SDK
 {
     public sealed class RSSAtomFeed : SyndicationFeed, IFeed<RSSAtomItem>
     {

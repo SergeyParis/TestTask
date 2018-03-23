@@ -3,12 +3,12 @@ D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.Data.dll
 D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.Data.pdb
 D:\dev\projects\TestTask\TestTask.Data\bin\Debug\EntityFramework.dll
 D:\dev\projects\TestTask\TestTask.Data\bin\Debug\EntityFramework.SqlServer.dll
-D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.SDK.dll
-D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.SDK.pdb
-D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.SDK.dll.config
 D:\dev\projects\TestTask\TestTask.Data\bin\Debug\EntityFramework.xml
 D:\dev\projects\TestTask\TestTask.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\dev\projects\TestTask\TestTask.Data\obj\Debug\TestTask.Data.csprojResolveAssemblyReference.cache
 D:\dev\projects\TestTask\TestTask.Data\obj\Debug\TestTask.Data.csproj.CoreCompileInputs.cache
 D:\dev\projects\TestTask\TestTask.Data\obj\Debug\TestTask.Data.dll
 D:\dev\projects\TestTask\TestTask.Data\obj\Debug\TestTask.Data.pdb
+D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.SDK.dll
+D:\dev\projects\TestTask\TestTask.Data\bin\Debug\TestTask.SDK.pdb
+D:\dev\projects\TestTask\TestTask.Data\obj\Debug\TestTask.Data.csproj.CopyComplete

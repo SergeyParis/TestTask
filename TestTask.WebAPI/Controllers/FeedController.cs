@@ -2,17 +2,15 @@
 using System.Web;
 using TestTask.SDK;
 using System.Text.RegularExpressions;
-using TestTask.Data;
+using TestTask.WebAPI;
 
-namespace TestTask.WebAPI.Controllers
+namespace TestTask.WebAPI
 {
     public class FeedController : ApiController
     {
-        private const string _valideUrlRegex = @"(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
-
         public IFeed<IItem> Get(ProviderType providerType, string encodedUrl)
         {
-            if (string.IsNullOrEmpty(encodedUrl) || !Regex.IsMatch(encodedUrl, _valideUrlRegex))
+            if (string.IsNullOrEmpty(encodedUrl) || !encodedUrl.IsvalideUrl())
                 return null;
             
             return ProvidersFactory.GetProvider(providerType).GetFeedCollection(HttpUtility.HtmlDecode(encodedUrl));
@@ -26,6 +24,4 @@ namespace TestTask.WebAPI.Controllers
         //    return CacheFactory.GetCacher().AddItemIntoFeed(idCollection, feed);
         //}
     }
-
-    
 }

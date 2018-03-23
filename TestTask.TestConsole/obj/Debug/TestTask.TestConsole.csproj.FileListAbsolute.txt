@@ -1,0 +1,10 @@
+D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.csprojResolveAssemblyReference.cache
+D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.csproj.CoreCompileInputs.cache
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.TestConsole.exe.config
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.TestConsole.exe
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.TestConsole.pdb
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.SDK.dll
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.SDK.pdb
+D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.exe
+D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.pdb
+D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.csproj.CopyComplete

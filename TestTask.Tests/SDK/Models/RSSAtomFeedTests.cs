@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ServiceModel.Syndication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestTask.SDK;
 
 namespace TestTask.Tests.SDK
@@ -18,13 +18,13 @@ namespace TestTask.Tests.SDK
         }
 
         [TestMethod]
-        public void RSSAtomFeedCollectionTest_argumentNull_log()
+        public void RSSAtomFeednTest_argumentNull_log()
         {
             new RSSAtomFeed(null, new SyndicationFeed());
 
             StringAssert.Contains(logger.Message, "must be not-null");
         }
-
+        
         [TestMethod]
         public void AddFeedTest_argumentNull_log()
         {

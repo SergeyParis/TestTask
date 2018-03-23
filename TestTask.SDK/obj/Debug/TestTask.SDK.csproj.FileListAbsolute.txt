@@ -1,0 +1,7 @@
+C:\Users\Dell\Desktop\TestTask\TestTask.SDK\obj\Debug\TestTask.SDK.csproj.CoreCompileInputs.cache
+D:\dev\projects\TestTask\TestTask.SDK\bin\Debug\TestTask.SDK.dll
+D:\dev\projects\TestTask\TestTask.SDK\bin\Debug\TestTask.SDK.pdb
+D:\dev\projects\TestTask\TestTask.SDK\obj\Debug\TestTask.SDK.csproj.CoreCompileInputs.cache
+D:\dev\projects\TestTask\TestTask.SDK\obj\Debug\TestTask.SDK.dll
+D:\dev\projects\TestTask\TestTask.SDK\obj\Debug\TestTask.SDK.pdb
+D:\dev\projects\TestTask\TestTask.SDK\obj\Debug\TestTask.SDK.csprojResolveAssemblyReference.cache

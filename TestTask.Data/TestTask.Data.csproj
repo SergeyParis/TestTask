@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDC3539E-56F2-4E8A-B328-C113C586022A}</ProjectGuid>
+    <ProjectGuid>{429E5C67-87DD-44F9-882D-89343DC45655}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestTask.Data</RootNamespace>
@@ -56,14 +56,14 @@
     <Compile Include="UsersConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebAPI\TestTask.SDK.csproj">
-      <Project>{dd25bac4-1952-4998-aefa-aa3e8a040097}</Project>
-      <Name>TestTask.SDK</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestTask.SDK\TestTask.SDK.csproj">
+      <Project>{f66af11e-8370-4e0f-b18d-5b14e87ec33c}</Project>
+      <Name>TestTask.SDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

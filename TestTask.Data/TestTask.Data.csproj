@@ -48,12 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FeedContext.cs" />
-    <Compile Include="FeedsConfiguration.cs" />
-    <Compile Include="ItemsConfiguration.cs" />
+    <Compile Include="Configuration\FeedsConfiguration.cs" />
+    <Compile Include="Configuration\ItemsConfiguration.cs" />
     <Compile Include="Model\IUser.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Model\Wrap\FeedWrapped.cs" />
+    <Compile Include="Model\Wrap\ItemWrapped.cs" />
+    <Compile Include="Model\Wrap\UserWrapped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersConfiguration.cs" />
+    <Compile Include="Configuration\UsersConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

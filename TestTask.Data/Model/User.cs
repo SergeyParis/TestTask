@@ -21,9 +21,14 @@ namespace TestTask.Data
         }
         public ICollection<IFeed<IItem>> Feeds { get; set; }
 
+        public User() : this("empty", new[] { new RSSAtomFeed() }) { }
         public User(string password, ICollection<IFeed<IItem>> feeds = null)
         {
             Password = password;
+
+            if (feeds == null)
+                feeds = new[] { new RSSAtomFeed() };
+
             Feeds = feeds;
         }
 

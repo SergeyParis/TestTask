@@ -6,13 +6,14 @@ namespace TestTask.SDK
     {
         internal static ILogger Logger { get; set; }
 
-        public string Id { get; }
-        public string Description { get; }
-        public string TypeDescription { get; }
-        public string Link { get; }
-        public string Title { get; }
-        public DateTime PublishDate { get; }
+        public string Id { get; set; }
+        public string Description { get; set; }
+        public string TypeDescription { get; set; }
+        public string Link { get; set; }
+        public string Title { get; set; }
+        public DateTime PublishDate { get; set; }
 
+        public RSSAtomItem() : this("empty", "d", "td", "l", "t", DateTime.MinValue) { }
         public RSSAtomItem(string id, string description, string typeDescription, string link, string title, DateTime publishDate)
         {
             if (id == null ||

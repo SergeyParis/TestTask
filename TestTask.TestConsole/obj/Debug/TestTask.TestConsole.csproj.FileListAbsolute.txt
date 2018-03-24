@@ -8,3 +8,10 @@ D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.SDK.pdb
 D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.exe
 D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.pdb
 D:\dev\projects\TestTask\TestTask.TestConsole\obj\Debug\TestTask.TestConsole.csproj.CopyComplete
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\EntityFramework.dll
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\EntityFramework.SqlServer.dll
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.Data.dll
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.Data.pdb
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\TestTask.Data.dll.config
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\EntityFramework.xml
+D:\dev\projects\TestTask\TestTask.TestConsole\bin\Debug\EntityFramework.SqlServer.xml

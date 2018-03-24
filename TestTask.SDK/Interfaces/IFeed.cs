@@ -6,11 +6,11 @@ namespace TestTask.SDK
     public interface IFeed<out TElement> : IEnumerable<TElement>
         where TElement : IItem
     {
-        string Id { get; }
-        string Name { get; }
-        string Title { get; }
-        string Language { get; }
-        DateTime LastUpdatedTime { get; }
+        string Id { get; set; }
+        string Name { get; set; }
+        string Title { get; set; }
+        string Language { get; set; }
+        DateTime LastUpdatedTime { get; set; }
 
         string AddFeed(IItem element);
         IEnumerable<TElement> GetFeeds();

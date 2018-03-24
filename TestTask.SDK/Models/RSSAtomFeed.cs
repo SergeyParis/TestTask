@@ -24,7 +24,7 @@ namespace TestTask.SDK
 
         public string Id {
             get => _id;
-            private set
+            set
             {
                 if (value == null)
                     _id = "";
@@ -77,7 +77,8 @@ namespace TestTask.SDK
             }
         }
         public int Count => Feeds.Count;
-        
+
+        public RSSAtomFeed() : this("empty", "n", "t", "l", DateTime.MinValue, new RSSAtomItem[0]) { }
         public RSSAtomFeed(string id, SyndicationFeed syndicationFeed)
         {
             if (id == null || syndicationFeed == null)
@@ -113,6 +114,7 @@ namespace TestTask.SDK
             LastUpdatedTime = lastUpdatedTime;
             _feeds = items.ToList();
         }
+
 
         public string AddFeed(IItem feed)
         {

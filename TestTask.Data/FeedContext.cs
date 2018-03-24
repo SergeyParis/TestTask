@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using TestTask.SDK;
 
 namespace TestTask.Data
 {
@@ -7,16 +6,16 @@ namespace TestTask.Data
     {
         static FeedContext()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FeedContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<FeedContext>());
         }
         public FeedContext() : base("FeedConnection")
         {
             
         }
 
-        public DbSet<IUser> Users { get; set; }
-        public DbSet<IItem> Items { get; set; }
-        public DbSet<IFeed<IItem>> Feeds { get; set; }
+        public DbSet<UserWrapped> Users { get; set; }
+        public DbSet<ItemWrapped> Items { get; set; }
+        public DbSet<FeedWrapped> Feeds { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,6 +27,5 @@ namespace TestTask.Data
         }
 
     }
-
-
+    
 }

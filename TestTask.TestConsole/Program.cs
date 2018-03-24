@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ServiceModel.Syndication;
+using TestTask.Data;
 using TestTask.SDK;
 
 namespace TestTask.ConsoleTest
@@ -12,7 +12,7 @@ namespace TestTask.ConsoleTest
         {
             PrintAllFeeds();
             WriteFeed();
-
+            
             Console.ReadKey();
         }
 
